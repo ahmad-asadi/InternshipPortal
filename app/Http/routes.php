@@ -11,6 +11,15 @@
 |
 */
 
+Route::bind("user", function($userId){
+    return \App\User::find($userId) ;
+});
+
+
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::auth();
+
+Route::get('/home/{user}', 'HomeController@index');
