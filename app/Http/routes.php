@@ -16,10 +16,8 @@ Route::bind("user", function($userId){
 });
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Route::auth();
 
-Route::get('/home/{user}', 'HomeController@index');
+Route::get('/', 'HomeController@index');
+
+Route::get('/faculty/{prof}', 'ProfController@index');

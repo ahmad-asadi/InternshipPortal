@@ -16,15 +16,15 @@ class CreateUsersTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('family');
-            $table->string('stdID');
-            $table->string('memSince');
             $table->string('dob');
-            $table->string('field');
+            $table->string('memSince');
             $table->string('phoneNo');
             $table->string('email')->unique();
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+
+            $table->morphs('userable');
         });
     }
 

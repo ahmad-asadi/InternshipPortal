@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Prof;
+use App\Student;
 use App\User;
 use Validator;
 use App\Http\Controllers\Controller;
@@ -33,7 +35,6 @@ class AuthController extends Controller
     /**
      * Create a new authentication controller instance.
      *
-     * @return void
      */
     public function __construct()
     {
@@ -48,17 +49,55 @@ class AuthController extends Controller
      */
     protected function validator(array $data)
     {
-        return Validator::make($data, [
-            'name'  =>  'required|max:255',
-            'family'  =>  'required|max:255',
-            'stdID' => 'required|max:255|unique:users',
-            'memSince'  =>  'required|max:255',
-            'dob'  =>  'required|max:255',
-            'field'  =>  'required|max:255',
-            'email' => 'required|email|max:255|unique:users',
-            'phoneNo'  =>  'required|max:255',
-            'password' => 'required|min:6|confirmed',
-        ]);
+        if(!isset($data['role']))
+            return Validator::make($data, ['role' => 'required']);
+
+        if($data['role'] == 'student') {
+            $validator = Validator::make($data, [
+                'name'      => 'required|max:255',
+                'family'    => 'required|max:255',
+                'dob'       => 'required|max:255',
+                'memSince'  => 'required|max:255',
+                'email'     => 'required|email|max:255|unique:users',
+                'phoneNo'   => 'required|max:255',
+                'password'  => 'required|min:6|confirmed',
+
+                'stdID'     =>  'required|max:255',
+                'field'     =>  'required|max:255',
+            ]);
+        }
+        elseif($data['role'])
+        {
+            $validator = Validator::make($data,[
+                'name'      => 'required|max:255',
+                'family'    => 'required|max:255',
+                'dob'       => 'required|max:255',
+                'memSince'  => 'required|max:255',
+                'email'     => 'required|email|max:255|unique:users',
+                'phoneNo'   => 'required|max:255',
+                'password'  => 'required|min:6|confirmed',
+            ]);
+        }
+        elseif($data['role'])
+        {
+            $validator = Validator::make($data, [
+                'name'      => 'required|max:255',
+                'family'    => 'required|max:255',
+                'dob'       => 'required|max:255',
+                'memSince'  => 'required|max:255',
+                'email'     => 'required|email|max:255|unique:users',
+                'phoneNo'   => 'required|max:255',
+                'password'  => 'required|min:6|confirmed',
+            ]);
+        }
+        else
+        {
+            $validator = Validator::make($data, [
+               'verification code'  =>  'required|max:255'
+            ]);
+        }
+
+        return $validator;
     }
 
     /**
@@ -69,16 +108,30 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
-            'family' => $data['family'],
-            'stdID' => $data['stdID'],
-            'memSince' => $data['memSince'],
-            'dob' => $data['dob'],
-            'field' => $data['field'],
-            'email' => $data['email'],
-            'phoneNo' => $data['phoneNo'],
-            'password' => bcrypt($data['password']),
+        $user = User::create([
+            'name'      => $data['name'],
+            'family'    => $data['family'],
+            'dob'       => $data['dob'],
+            'memSince'  => $data['memSince'],
+            'email'     => $data['email'],
+            'phoneNo'   => $data['phoneNo'],
+            'password'  => bcrypt($data['password']),
         ]);
+
+        if($data['role'] == 'student') {
+            $role = Student::create([
+                'stdID'     =>  'required|max:255',
+                'field'     =>  'required|max:255',
+            ]);
+        }
+        elseif($data['role'])
+        {
+            $role = Prof::create([
+
+            ]);
+        }
+
+        $role->user()->save($user);
+        return $user;
     }
 }

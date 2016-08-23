@@ -157,6 +157,7 @@
                                 </button>
                             </div>
                         </div>
+                        <input type="hidden" name="role" value="student"/>
                     </form>
                 </div>
             </div>

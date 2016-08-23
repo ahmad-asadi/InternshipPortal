@@ -11,7 +11,6 @@ class HomeController extends Controller
     /**
      * Create a new controller instance.
      *
-     * @return void
      */
     public function __construct()
     {
@@ -24,10 +23,9 @@ class HomeController extends Controller
      * @param User $user
      * @return \Illuminate\Http\Response
      */
-    public function index(User $user)
+    public function index()
     {
-        if(!$user)
-            return abort(404) ;
-        return view('students.home', ["user"=>$user]);
+        $user = \Auth::user();
+        
     }
 }
