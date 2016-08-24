@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Prof extends Model
 {
     protected $fillable = [
-
+        'edu', 'grade'
     ];
 
     protected $hidden = [

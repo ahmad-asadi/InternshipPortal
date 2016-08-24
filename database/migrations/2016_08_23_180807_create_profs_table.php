@@ -14,6 +14,8 @@ class CreateProfsTable extends Migration
     {
         Schema::create('profs', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('grade');
+            $table->string('edu');
             $table->rememberToken();
             $table->timestamps();
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Prof;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -15,7 +16,14 @@ class StudentController extends Controller
      */
     public function index()
     {
-        //
+        if(!\Auth::check())
+            return redirect('/login');
+
+        $user = \Auth::user();
+
+        $profs = Prof::get() ;
+
+        return view('students.home', ["user"=>$user, "profs"=>$profs]);
     }
 
     /**

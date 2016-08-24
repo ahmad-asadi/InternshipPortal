@@ -66,28 +66,19 @@ class AuthController extends Controller
                 'field'     =>  'required|max:255',
             ]);
         }
-        elseif($data['role'])
+        elseif($data['role']=='prof')
         {
             $validator = Validator::make($data,[
-                'name'      => 'required|max:255',
-                'family'    => 'required|max:255',
-                'dob'       => 'required|max:255',
-                'memSince'  => 'required|max:255',
-                'email'     => 'required|email|max:255|unique:users',
-                'phoneNo'   => 'required|max:255',
-                'password'  => 'required|min:6|confirmed',
-            ]);
-        }
-        elseif($data['role'])
-        {
-            $validator = Validator::make($data, [
-                'name'      => 'required|max:255',
-                'family'    => 'required|max:255',
-                'dob'       => 'required|max:255',
-                'memSince'  => 'required|max:255',
-                'email'     => 'required|email|max:255|unique:users',
-                'phoneNo'   => 'required|max:255',
-                'password'  => 'required|min:6|confirmed',
+                'name'      =>  'required|max:255',
+                'family'    =>  'required|max:255',
+                'dob'       =>  'required|max:255',
+                'memSince'  =>  'required|max:255',
+                'email'     =>  'required|email|max:255|unique:users',
+                'phoneNo'   =>  'required|max:255',
+                'password'  =>  'required|min:6|confirmed',
+
+                'edu'       =>  'required|max:255',
+                'grade'     =>  'required|max:255',
             ]);
         }
         else
@@ -120,18 +111,31 @@ class AuthController extends Controller
 
         if($data['role'] == 'student') {
             $role = Student::create([
-                'stdID'     =>  'required|max:255',
-                'field'     =>  'required|max:255',
+                'stdID'     =>  $data['stdID'],
+                'field'     =>  $data['field'],
             ]);
         }
-        elseif($data['role'])
+        elseif($data['role']=='prof')
         {
             $role = Prof::create([
-
+                'edu'       =>  $data['edu'],
+                'grade'     =>  $data['grade'],
             ]);
         }
 
         $role->user()->save($user);
         return $user;
+    }
+
+    protected function authenticated()
+    {
+        $user = \Auth::user();
+        $role = get_class($user->role()) ;
+        if($role == Student::class)
+            $url = "/students/home/" ;
+        elseif($role == Prof::class)
+            $url = "/faculty/home/" ;
+
+        return redirect($url);
     }
 }

@@ -22,11 +22,13 @@ class ProfController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($prof)
+    public function index()
     {
-        if(!$prof)
-            return abort(404) ;
-        return view('profs.home',["user" , $prof]) ;
+        if(!\Auth::check())
+            return redirect('/login');
+
+        $user = \Auth::user();
+        return view('profs.home', ["user"=>$user]);
     }
 
     /**
@@ -34,9 +36,9 @@ class ProfController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function getRegisterForm()
     {
-        //
+        return view('profs.register');
     }
 
     /**

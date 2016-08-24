@@ -20,4 +20,7 @@ Route::auth();
 
 Route::get('/', 'HomeController@index');
 
-Route::get('/faculty/{prof}', 'ProfController@index');
+Route::get('/students/home', 'StudentController@index');
+
+Route::get('/faculty/home', 'ProfController@index');
+Route::get('/faculty/register', 'ProfRegisterController@getRegisterForm');

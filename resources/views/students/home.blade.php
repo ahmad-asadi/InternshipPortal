@@ -76,5 +76,27 @@
     <!-- /.row -->
     </form>
 
+    <form>
+        <legend>اساتید</legend>
+        <div class="list-group">
+            @foreach($profs as $prof)
+                <a href="#" class="list-group-item list-group-item-action list-group-item-success">
+                    @if($prof->edu == "MSC")
+                        جناب آقای مهندس
+                    @elseif($prof->edu=="PHD")
+                        جناب آقای دکتر
+                    @endif
+
+                    {{$prof->user()->first()->name}}
+                    {{$prof->user()->first()->family}}
+
+                        (
+                    {{trans("register.$prof->grade")}}
+                    )
+                </a>
+            @endforeach
+        </div>
+    </form>
+
 
 @endsection

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests;
+use App\Prof;
+use App\Student;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -26,6 +28,12 @@ class HomeController extends Controller
     public function index()
     {
         $user = \Auth::user();
-        
+        $role = get_class($user->role()) ;
+        if($role == Student::class)
+            $url = "/students/home/" ;
+        elseif($role == Prof::class)
+            $url = "/profs/home/" ;
+
+        return redirect($url + $user->role()->id);
     }
 }

@@ -26,6 +26,6 @@ class User extends Authenticatable
 
     public function role()
     {
-        return $this->morphTo()->first() ;
+        return $this->morphTo('userable')->first() ;
     }
 }
