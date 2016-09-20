@@ -24,3 +24,6 @@ Route::get('/students/home', 'StudentController@index');
 
 Route::get('/faculty/home', 'ProfController@index');
 Route::get('/faculty/register', 'ProfRegisterController@getRegisterForm');
+
+Route::get('/companies/home', 'CompanyController@index');
+Route::get('/companies/register', 'CompanyRegisterController@getRegisterForm');
