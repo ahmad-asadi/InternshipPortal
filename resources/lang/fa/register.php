@@ -30,7 +30,7 @@ return [
     "business"          =>  "حوزه فعالیت",
     "description"       =>  "شرح",
     "address"           =>  "نشانی",
-
+    "capacity"          =>  "تعداد کارآموزهای مورد نظر",
 
 
 

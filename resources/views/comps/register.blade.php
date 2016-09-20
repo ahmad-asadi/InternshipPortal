@@ -193,5 +193,4 @@
             </div>
         </div>
     </div>
-    {{print_r($errors)}}
 @endsection

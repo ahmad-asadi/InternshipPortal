@@ -31,7 +31,7 @@ return [
     "business"          =>  "Business",
     "description"       =>  "Description",
     "address"           =>  "Address",
-
+    "capacity"          =>  "Number of Requested Students",
 
     "مربی"
     =>  "lecturer",

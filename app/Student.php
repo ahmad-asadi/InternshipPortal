@@ -14,7 +14,11 @@ class Student extends Model
 
     public function user()
     {
-        return $this->morphOne('App\User', 'userable')
-            ;
+        return $this->morphOne('App\User', 'userable');
+    }
+
+    public function ticket()
+    {
+        return $this->hasOne('App/Ticket');
     }
 }

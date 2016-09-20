@@ -27,3 +27,6 @@ Route::get('/faculty/register', 'ProfRegisterController@getRegisterForm');
 
 Route::get('/companies/home', 'CompanyController@index');
 Route::get('/companies/register', 'CompanyRegisterController@getRegisterForm');
+
+Route::get('/companies/registerTicket','TicketController@getRegisterForm');
+Route::post('/companies/registerTicket','TicketController@registerTicket');

@@ -37,6 +37,6 @@ class HomeController extends Controller
         elseif($role == Company::class)
             $url = "/companies/home" ;
 
-        return redirect($url + $user->role()->id);
+        return redirect($url);
     }
 }
