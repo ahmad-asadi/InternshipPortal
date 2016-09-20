@@ -38,37 +38,57 @@
                                 </div>
                             </div>
 
-                            <div class="form-group{{ $errors->has('grade') ? ' has-error' : '' }}">
-                                <label for="grade" class="col-md-4 control-label">{{trans('register.grade')}}</label>
+                            <div class="form-group{{ $errors->has('company_name') ? ' has-error' : '' }}">
+                                <label for="company_name" class="col-md-4 control-label">{{trans('register.companyName')}}</label>
 
                                 <div class="col-md-6">
-                                    <select id="grade" class="form-control" name="grade" value="{{ old('grade') }}">
-                                        <option name="{{trans('register.lecturer')}}">{{trans('register.lecturer')}}</option>
-                                        <option name="{{trans('register.associate')}}">{{trans('register.associate')}}</option>
-                                        <option name="{{trans('register.teacherAssistant')}}">{{trans('register.teacherAssistant')}}</option>
-                                        <option name="{{trans('register.prof')}}">{{trans('register.prof')}}</option>
-                                    </select>
+                                    <input id="company_name" type="text" class="form-control" name="company_name" value="{{ old('company_name') }}">
 
-                                    @if ($errors->has('grade'))
+                                    @if ($errors->has('company_name'))
                                         <span class="help-block">
-                                        <strong>{{ $errors->first('grade') }}</strong>
+                                        <strong>{{ $errors->first('company_name') }}</strong>
                                     </span>
                                     @endif
                                 </div>
                             </div>
 
-                            <div class="form-group{{ $errors->has('edu') ? ' has-error' : '' }}">
-                                <label for="edu" class="col-md-4 control-label">{{trans('register.edu')}}</label>
+                            <div class="form-group{{ $errors->has('business') ? ' has-error' : '' }}">
+                                <label for="business" class="col-md-4 control-label">{{trans('register.business')}}</label>
 
                                 <div class="col-md-6">
-                                    <select id="edu" class="form-control" name="edu" value="{{ old('edu') }}">
-                                        <option name="1">{{trans('register.MSC')}}</option>
-                                        <option name="2">{{trans('register.PHD')}}</option>
-                                    </select>
+                                    <input id="business" type="text" class="form-control" name="business" value="{{ old('business') }}">
 
-                                    @if ($errors->has('edu'))
+                                    @if ($errors->has('business'))
                                         <span class="help-block">
-                                        <strong>{{ $errors->first('edu') }}</strong>
+                                        <strong>{{ $errors->first('business') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div class="form-group{{ $errors->has('description') ? ' has-error' : '' }}">
+                                <label for="description" class="col-md-4 control-label">{{trans('register.description')}}</label>
+
+                                <div class="col-md-6">
+                                    <input id="description" type="text" class="form-control" name="description" value="{{ old('description') }}">
+
+                                    @if ($errors->has('description'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('description') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div class="form-group{{ $errors->has('address') ? ' has-error' : '' }}">
+                                <label for="address" class="col-md-4 control-label">{{trans('register.address')}}</label>
+
+                                <div class="col-md-6">
+                                    <input id="address" type="text" class="form-control" name="address" value="{{ old('address') }}">
+
+                                    @if ($errors->has('address'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('address') }}</strong>
                                     </span>
                                     @endif
                                 </div>
@@ -166,11 +186,12 @@
                                     </button>
                                 </div>
                             </div>
-                            <input type="hidden" name="role" value="prof"/>
+                            <input type="hidden" name="role" value="comp"/>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    {{print_r($errors)}}
 @endsection

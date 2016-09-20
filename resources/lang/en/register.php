@@ -27,7 +27,10 @@ return [
     "edu"               =>  "Education Grade",
     "MSC"               =>  "Master of Science",
     "PHD"               =>  "PHD",
-
+    "companyName"       =>  "Company Name",
+    "business"          =>  "Business",
+    "description"       =>  "Description",
+    "address"           =>  "Address",
 
 
     "مربی"

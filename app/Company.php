@@ -6,5 +6,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Company extends Model
 {
-    //
+
+    protected $fillable = [
+        'company_name', 'business', 'description', 'address'
+    ];
+
+    protected $hidden = [
+        'password',
+    ] ;
+
+    public function user()
+    {
+        return $this->morphOne('App\User', 'userable');
+    }
 }

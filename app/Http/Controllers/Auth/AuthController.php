@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Company;
 use App\Prof;
 use App\Student;
 use App\User;
@@ -81,6 +82,23 @@ class AuthController extends Controller
                 'grade'     =>  'required|max:255',
             ]);
         }
+        elseif($data['role']=='comp')
+        {
+            $validator = Validator::make($data,[
+                'name'          =>  'required|max:255',
+                'family'        =>  'required|max:255',
+                'dob'           =>  'required|max:255',
+                'memSince'      =>  'required|max:255',
+                'email'         =>  'required|email|max:255|unique:users',
+                'phoneNo'       =>  'required|max:255',
+                'password'      =>  'required|min:6|confirmed',
+
+                'company_name'  =>  'required|max:255',
+                'business'      =>  'required|max:255',
+                'description'   =>  'required',
+                'address'       =>  'required|max:255',
+            ]);
+        }
         else
         {
             $validator = Validator::make($data, [
@@ -122,6 +140,15 @@ class AuthController extends Controller
                 'grade'     =>  $data['grade'],
             ]);
         }
+        elseif ($data['role']=='comp')
+        {
+            $role = Company::create([
+                'company_name'  =>  $data['company_name'],
+                'business'      =>  $data['business'],
+                'description'   =>  $data['description'],
+                'address'       =>  $data['address'],
+            ]);
+        }
 
         $role->user()->save($user);
         return $user;
@@ -135,6 +162,8 @@ class AuthController extends Controller
             $url = "/students/home/" ;
         elseif($role == Prof::class)
             $url = "/faculty/home/" ;
+        elseif($role == Company::class)
+            $url = "/companies/home/" ;
 
         return redirect($url);
     }

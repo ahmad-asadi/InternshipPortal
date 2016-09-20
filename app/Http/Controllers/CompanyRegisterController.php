@@ -16,6 +16,6 @@ class CompanyRegisterController extends Controller
      */
     public function getRegisterForm()
     {
-        return view('profs.register');
+        return view('comps.register');
     }
 }
