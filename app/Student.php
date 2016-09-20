@@ -19,6 +19,6 @@ class Student extends Model
 
     public function ticket()
     {
-        return $this->hasOne('App/Ticket');
+        return $this->hasOne('App\Ticket');
     }
 }

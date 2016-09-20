@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Prof;
+use App\Ticket;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -23,7 +24,8 @@ class StudentController extends Controller
 
         $profs = Prof::get() ;
 
-        return view('students.home', ["user"=>$user, "profs"=>$profs]);
+        $tickets = Ticket::get() ;
+        return view('students.home', ["user"=>$user, "profs"=>$profs, "tickets"=>$tickets]);
     }
 
     /**

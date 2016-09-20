@@ -12,11 +12,11 @@ class Ticket extends Model
 
     public function company()
     {
-        return $this->belongsTo('App/Company') ;
+        return $this->belongsTo('App\Company') ;
     }
 
     public function students()
     {
-        return $this->hasMany('App/Student') ;
+        return $this->hasMany('App\Student') ;
     }
 }
