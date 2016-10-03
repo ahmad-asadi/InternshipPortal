@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Prof;
+use App\Ticket;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -28,7 +30,12 @@ class ProfController extends Controller
             return redirect('/login');
 
         $user = \Auth::user();
-        return view('profs.home', ["user"=>$user]);
+        /** @noinspection PhpUndefinedMethodInspection */
+        $profs = Prof::get() ;
+
+        /** @noinspection PhpUndefinedMethodInspection */
+        $tickets = Ticket::get() ;
+        return view('profs.home', ["user"=>$user, "profs"=>$profs, "tickets"=>$tickets]);
     }
 
     /**

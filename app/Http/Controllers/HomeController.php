@@ -33,7 +33,7 @@ class HomeController extends Controller
         if($role == Student::class)
             $url = "/students/home/" ;
         elseif($role == Prof::class)
-            $url = "/profs/home/" ;
+            $url = "/faculty/home/" ;
         elseif($role == Company::class)
             $url = "/companies/home" ;
 

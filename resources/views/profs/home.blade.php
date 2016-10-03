@@ -63,7 +63,7 @@
         <legend>شرکت‌ها</legend>
     <!-- Small boxes (Stat box) -->
     <div class="row">
-        @yield('tickets)
+        @yield('tickets')
     </div>
     <!-- /.row -->
     </form>
