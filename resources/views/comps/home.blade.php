@@ -60,10 +60,10 @@
     <br/>
 
     <form>
-        <legend>شرکت‌ها</legend>
+        <legend>تیکت‌ها</legend>
     <!-- Small boxes (Stat box) -->
     <div class="row">
-        @yield('tickets')
+        @include('comps.tickets')
     </div>
     <!-- /.row -->
     </form>

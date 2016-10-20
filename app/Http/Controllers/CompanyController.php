@@ -36,7 +36,7 @@ class CompanyController extends Controller
         $profs = Prof::get() ;
 
         /** @noinspection PhpUndefinedMethodInspection */
-        $tickets = Ticket::get() ;
+        $tickets = $user->role()->tickets()->get() ;
         return view('comps.home', ["user"=>$user, "profs"=>$profs, "tickets"=>$tickets]);
     }
 }
