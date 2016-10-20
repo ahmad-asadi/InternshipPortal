@@ -26,4 +26,5 @@ return [
     "dashboard"         =>  "Dashboard",
     "controlPanel"      =>  "Control Panel",
     "reserveTicket"     =>  "Reserve Ticket",
+    "moreInfo"          =>  "More Info",
 ];

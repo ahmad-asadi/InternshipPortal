@@ -34,7 +34,7 @@ class TicketController extends Controller
 
         /** @noinspection PhpUndefinedMethodInspection */
         $company->tickets()->save($ticket) ;
-        return json_encode($ticket);
+        return redirect('/companies/home');
     }
 
     public function reserveTicket($ticket){

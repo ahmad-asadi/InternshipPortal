@@ -25,5 +25,6 @@ return [
     "student"           =>  "دانشجو",
     "dashboard"         =>  "میزکار",
     "controlPanel"      =>  "",
-    "reserveTicket"     =>  "رزرو کار‌آموزی شرکت‌ها"
+    "reserveTicket"     =>  "رزرو",
+    "moreInfo"          =>  "اطلاعات بیشتر"
 ];
