@@ -97,6 +97,7 @@ class AuthController extends Controller
                 'business'      =>  'required|max:255',
                 'description'   =>  'required',
                 'address'       =>  'required|max:255',
+                'link'          =>  'required|max:255',
             ]);
         }
         else
@@ -147,6 +148,7 @@ class AuthController extends Controller
                 'business'      =>  $data['business'],
                 'description'   =>  $data['description'],
                 'address'       =>  $data['address'],
+                'link'          =>  $data['link'],
             ]);
         }
 

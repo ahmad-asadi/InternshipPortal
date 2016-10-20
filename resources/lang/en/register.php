@@ -32,6 +32,7 @@ return [
     "description"       =>  "Description",
     "address"           =>  "Address",
     "capacity"          =>  "Number of Requested Students",
+    "link"              =>  "Official Website Link",
 
     "مربی"
     =>  "lecturer",
