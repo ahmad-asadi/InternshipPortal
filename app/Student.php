@@ -19,6 +19,7 @@ class Student extends Model
 
     public function ticket()
     {
-        return $this->hasOne('App\Ticket');
+        /** @noinspection PhpUndefinedMethodInspection */
+        return $this->belongsTo('App\Ticket')->first();
     }
 }

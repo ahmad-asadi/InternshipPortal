@@ -5,6 +5,11 @@
 <div class="col-lg-3 col-xs-6">
     <!-- small box -->
     <div class="small-box bg-aqua">
+        @if($reservedTicket == $ticket)
+            <div class="inner small-box bg-green">
+                <h4>شما این سمت را رزرو کرده‌اید</h4>
+            </div>
+        @endif
         <div class="inner">
             <h3>{{$ticket->capacity}}</h3>
 
@@ -14,7 +19,7 @@
             <i class="ion ion-bag"></i>
         </div>
         <a href="{{$ticket->company()->first()->link}}" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-        <a href="#" class="small-box-footer">register <i class="fa fa-arrow-circle-right"></i></a>
+        <a href="/students/reserveTicket/{{$ticket->id}}" class="small-box-footer">register <i class="fa fa-arrow-circle-right"></i></a>
     </div>
 </div>
 

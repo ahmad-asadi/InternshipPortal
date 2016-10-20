@@ -2,11 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Company;
 use App\Ticket;
 use Illuminate\Http\Request;
-
-use App\Http\Requests;
 
 class TicketController extends Controller
 {
@@ -35,7 +32,23 @@ class TicketController extends Controller
         $ticket->description    =   $request->input('description');
         $ticket->capacity       =   $request->input('capacity');
 
+        /** @noinspection PhpUndefinedMethodInspection */
         $company->tickets()->save($ticket) ;
         return json_encode($ticket);
+    }
+
+    public function reserveTicket($ticket){
+        $user = \Auth::user();
+        $student = $user->role() ;
+        if(! is_a($student, '\App\Student'))
+            dd($student);
+
+        if(!isset($ticket) || !$ticket)
+            dd('No Ticket');
+
+        /** @noinspection PhpUndefinedMethodInspection */
+        $ticket->students()->save($student);
+
+        return redirect('/students/home') ;
     }
 }

@@ -22,20 +22,14 @@ class StudentController extends Controller
 
         $user = \Auth::user();
 
+        /** @noinspection PhpUndefinedMethodInspection */
         $profs = Prof::get() ;
 
+        /** @noinspection PhpUndefinedMethodInspection */
         $tickets = Ticket::get() ;
-        return view('students.home', ["user"=>$user, "profs"=>$profs, "tickets"=>$tickets]);
-    }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        $reservedTicket = $user->role()->ticket() ;
+        return view('students.home', ["user"=>$user, "profs"=>$profs, "tickets"=>$tickets, "reservedTicket"=>$reservedTicket]);
     }
 
     /**

@@ -25,4 +25,5 @@ return [
     "student"           =>  "Student",
     "dashboard"         =>  "Dashboard",
     "controlPanel"      =>  "Control Panel",
+    "reserveTicket"     =>  "Reserve Ticket",
 ];
