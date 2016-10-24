@@ -22,4 +22,10 @@ class Student extends Model
         /** @noinspection PhpUndefinedMethodInspection */
         return $this->belongsTo('App\Ticket')->first();
     }
+
+    public function profTicket()
+    {
+        /** @noinspection PhpUndefinedMethodInspection */
+        return $this->belongsTo('App\ProfTicket')->first();
+    }
 }
