@@ -46,9 +46,15 @@ class TicketController extends Controller
         if(!isset($ticket) || !$ticket)
             dd('No Ticket');
 
-        /** @noinspection PhpUndefinedMethodInspection */
-        $ticket->students()->save($student);
 
-        return redirect('/students/home') ;
+        if(count($ticket->students()->get()) < $ticket->capacity) {
+            /** @noinspection PhpUndefinedMethodInspection */
+            $ticket->students()->save($student);
+            $res = redirect('/students/home');
+        }
+        else
+            $res = view('errors.503') ;
+
+        return $res;
     }
 }
