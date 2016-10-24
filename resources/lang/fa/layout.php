@@ -31,4 +31,5 @@ return [
     "profRegister"      =>  "ثبت استاد جدید",
     "compRegister"      =>  "ثبت شرکت جدید",
     "studentRegister"   =>  "ثبت دانشجوی جدید",
+    "registerTicket"    =>  "ثبت تیکت جدید",
 ];

@@ -2,7 +2,7 @@
 
 
 @section('sidebar')
-    @include('layouts.sidebar')
+    @include('profs.sidebar')
 @endsection
 
 @section('username')

@@ -33,6 +33,8 @@ return [
     "address"           =>  "Address",
     "capacity"          =>  "Number of Requested Students",
     "link"              =>  "Official Website Link",
+    "registerTicket"    =>  "Register",
+    "login"             =>  "Login",
 
     "مربی"
     =>  "lecturer",

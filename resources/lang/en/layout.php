@@ -31,4 +31,5 @@ return [
     "profRegister"      =>  "Register New Professor",
     "compRegister"      =>  "Register New Company",
     "studentRegister"   =>  "Register New Student",
+    "registerTicket"    =>  "Register New Ticket",
 ];
