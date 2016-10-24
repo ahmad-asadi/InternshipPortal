@@ -43,3 +43,5 @@ Route::get('/companies/register', 'CompanyRegisterController@getRegisterForm');
 
 Route::get('/companies/registerTicket','TicketController@getRegisterForm');
 Route::post('/companies/registerTicket','TicketController@registerTicket');
+
+Route::get('/admin/home', 'AdminController@index');

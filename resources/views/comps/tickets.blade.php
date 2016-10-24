@@ -22,7 +22,7 @@
             </div>
         <div class="form-group">
             <a href="#" class="small-box-footer" style="float: right;"><span class="glyphicon-alert"></span> <i class="fa fa-arrow-circle-right"></i></a>
-            <span>{{$std->name}} {{$std->family}} - {{$std->stdID}} </span>
+            <span>{{$std->user()->first()->name}} {{$std->user()->first()->family}} - {{$std->stdID}} </span>
             <a href="#" class="small-box-footer" style="float: left;"><span class="glyphicon-apple"></span> <i class="fa fa-arrow-circle-right"></i></a>
         </div>
         @endforeach
