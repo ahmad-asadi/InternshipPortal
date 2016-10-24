@@ -22,9 +22,8 @@ class HomeController extends Controller
 
     /**
      * Show the application dashboard.
-     *
-     * @param User $user
      * @return \Illuminate\Http\Response
+     * @internal param User $user
      */
     public function index()
     {

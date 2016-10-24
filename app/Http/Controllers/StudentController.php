@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Prof;
+use App\ProfTicket;
 use App\Ticket;
 use Illuminate\Http\Request;
 
@@ -28,8 +29,15 @@ class StudentController extends Controller
         /** @noinspection PhpUndefinedMethodInspection */
         $tickets = Ticket::get() ;
 
+        /** @noinspection PhpUndefinedMethodInspection */
+        $profTickets = ProfTicket::get() ;
+
+        /** @noinspection PhpUndefinedMethodInspection */
         $reservedTicket = $user->role()->ticket() ;
-        return view('students.home', ["user"=>$user, "profs"=>$profs, "tickets"=>$tickets, "reservedTicket"=>$reservedTicket]);
+        /** @noinspection PhpUndefinedMethodInspection */
+        $reservedProfTicket = $user->role()->profTicket() ;
+
+        return view('students.home', ["user"=>$user, "profs"=>$profs, "tickets"=>$tickets, "reservedTicket"=>$reservedTicket, "profTickets" => $profTickets , "reservedProfTicket" => $reservedProfTicket]);
     }
 
     /**

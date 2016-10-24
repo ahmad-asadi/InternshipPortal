@@ -12,7 +12,7 @@ class ProfTicket extends Model
 
     public function prof()
     {
-        return $this->belongsTo('App\Prof') ;
+        return $this->belongsTo('App\Prof')->first() ;
     }
 
     public function students()

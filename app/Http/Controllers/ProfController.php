@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Prof;
+use App\ProfTicket;
 use App\Ticket;
 use Illuminate\Http\Request;
 
@@ -34,7 +35,7 @@ class ProfController extends Controller
         $profs = Prof::get() ;
 
         /** @noinspection PhpUndefinedMethodInspection */
-        $tickets = Ticket::get() ;
+        $tickets = $user->role()->tickets()->get() ;
         return view('profs.home', ["user"=>$user, "profs"=>$profs, "tickets"=>$tickets]);
     }
 

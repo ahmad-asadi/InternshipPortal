@@ -26,5 +26,6 @@ return [
     "dashboard"         =>  "میزکار",
     "controlPanel"      =>  "",
     "reserveTicket"     =>  "رزرو",
+    "reserveProfTicket" =>  "ارسال درخواست",
     "moreInfo"          =>  "اطلاعات بیشتر"
 ];

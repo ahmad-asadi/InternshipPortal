@@ -18,8 +18,13 @@
 
             <p style="font-family:'B Nazanin';">{{$ticket->description}}</p>
             <p style="font-family:'B Nazanin';">
-            تعداد افراد مورد نیاز:
+                تعداد افراد مورد نیاز:
                 {{$ticket->capacity}}
+                نفر
+            </p>
+            <p style="font-family:'B Nazanin';">
+                تعداد ظرفیت باقی‌مانده:
+                {{$ticket->capacity - count($ticket->students()->get())}}
                 نفر
             </p>
         </div>

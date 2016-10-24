@@ -16,10 +16,16 @@ class CreateStudentsTable extends Migration
             $table->increments('id');
             $table->string('stdID');
             $table->string('field');
+            /** @noinspection PhpUndefinedMethodInspection */
             $table->integer('ticket_id')->unsigned()->nullable();
+            /** @noinspection PhpUndefinedMethodInspection */
+            $table->integer('prof_ticket_id')->unsigned()->nullable();
             $table->timestamps();
 
+            /** @noinspection PhpUndefinedMethodInspection */
             $table->foreign('ticket_id')->references('id')->on('tickets');
+            /** @noinspection PhpUndefinedMethodInspection */
+            $table->foreign('prof_ticket_id')->references('id')->on('prof_tickets');
         });
     }
 

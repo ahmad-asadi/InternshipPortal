@@ -26,5 +26,6 @@ return [
     "dashboard"         =>  "Dashboard",
     "controlPanel"      =>  "Control Panel",
     "reserveTicket"     =>  "Reserve Ticket",
+    "reserveProfTicket" =>  "Send Request to the Professor",
     "moreInfo"          =>  "More Info",
 ];
