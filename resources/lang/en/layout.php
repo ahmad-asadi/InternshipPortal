@@ -28,4 +28,7 @@ return [
     "reserveTicket"     =>  "Reserve Ticket",
     "reserveProfTicket" =>  "Send Request to the Professor",
     "moreInfo"          =>  "More Info",
+    "profRegister"      =>  "Register New Professor",
+    "compRegister"      =>  "Register New Company",
+    "studentRegister"   =>  "Register New Student",
 ];

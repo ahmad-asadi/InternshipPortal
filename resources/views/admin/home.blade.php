@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 
-{{--@section('sidebar')--}}
-    {{--@include('layouts.sidebar')--}}
-{{--@endsection--}}
+@section('sidebar')
+    @include('admin.sidebar')
+@endsection
 
 @section('username')
     مدیر سامانه

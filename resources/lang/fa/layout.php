@@ -27,5 +27,8 @@ return [
     "controlPanel"      =>  "",
     "reserveTicket"     =>  "رزرو",
     "reserveProfTicket" =>  "ارسال درخواست",
-    "moreInfo"          =>  "اطلاعات بیشتر"
+    "moreInfo"          =>  "اطلاعات بیشتر",
+    "profRegister"      =>  "ثبت استاد جدید",
+    "compRegister"      =>  "ثبت شرکت جدید",
+    "studentRegister"   =>  "ثبت دانشجوی جدید",
 ];
