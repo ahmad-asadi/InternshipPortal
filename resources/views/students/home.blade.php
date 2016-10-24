@@ -9,6 +9,10 @@
     {{$user->name}}
 @endsection
 
+@section('role')
+    دانشجو
+@endsection
+
 @section('messageCount')
     {{4}}
 @endsection
@@ -35,12 +39,12 @@
 
                 <td class="form-group col-lg-2">
                     <label for="studentID">{{trans("register.stdID")}}</label>
-                    <input type="text" disabled class="form-control disabled" id="studentID"  placeholder='{{$user->stdID}}'>
+                    <input type="text" disabled class="form-control disabled" id="studentID"  placeholder='{{$user->role()->stdID}}'>
                 </td>
 
                 <td class="form-group col-lg-2">
                     <label for="field">{{trans("register.field")}}</label>
-                    <input type="text" disabled class="form-control disabled" id="field"  placeholder='{{$user->field}}'>
+                    <input type="text" disabled class="form-control disabled" id="field"  placeholder='{{$user->role()->field}}'>
                 </td>
             </tr>
 

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>AdminLTE 2 | Dashboard</title>
+    <title>سامانه کارآموزی دانشکده مهندسی کامپیوتر و فن‌آوری اطلاعات دانشگاه صنعتی امیرکبیر</title>
     <link rel="stylesheet" href="../css/main.css">
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">

@@ -9,6 +9,10 @@
     {{$user->name}}
 @endsection
 
+@section('role')
+    استاد
+@endsection
+
 @section('messageCount')
     {{4}}
 @endsection

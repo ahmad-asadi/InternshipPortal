@@ -21,11 +21,11 @@
 
             <li><a href="#"><i class="fa fa-circle-o text-blue"></i> <span>{{trans('layout.home')}}</span></a></li>
 
-            <li><a href="#"><i class="fa fa-circle-o text-blue"></i> <span>{{trans('layout.profOrder')}}</span></a></li>
+            {{--<li><a href="#"><i class="fa fa-circle-o text-blue"></i> <span>{{trans('layout.profOrder')}}</span></a></li>--}}
 
             <li><a href="#"><i class="fa fa-circle-o text-blue"></i> <span>{{trans('layout.forms')}}</span></a></li>
 
-            <li><a href="#"><i class="fa fa-circle-o text-blue"></i> <span>{{trans('layout.interests')}}</span></a></li>
+            {{--<li><a href="#"><i class="fa fa-circle-o text-blue"></i> <span>{{trans('layout.interests')}}</span></a></li>--}}
 
             <li class="treeview">
                 <a href="#">

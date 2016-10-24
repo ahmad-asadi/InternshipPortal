@@ -27,6 +27,21 @@
 
             <li><a href="/register"><i class="fa fa-circle-o text-blue"></i> <span>{{trans('layout.studentRegister')}}</span></a></li>
 
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-dashboard"></i> <span>{{trans('layout.settings')}}</span>
+                    <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="index.html" ><i class="fa fa-circle-o"></i> {{trans('layout.changePassword')}}</a></li>
+                    <li><a href="index.html"><i class="fa fa-circle-o"></i> {{trans('layout.changeProfilePict')}}</a></li>
+                    <li><a href="index.html"><i class="fa fa-circle-o"></i> {{trans('layout.changeInfo')}}</a></li>
+                </ul>
+            </li>
+
+
             {{--<li class="treeview">--}}
                 {{--<a href="#">--}}
                     {{--<i class="fa fa-dashboard"></i> <span>{{trans('layout.settings')}}</span>--}}

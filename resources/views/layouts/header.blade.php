@@ -226,7 +226,7 @@
                             <img src="../img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                             <p>
-                                @yield('username') - {{trans('layout.student')}}
+                                @yield('username') - @yield('role')
                                 <small>{{trans('layout.since')}} @yield('memSince')</small>
                             </p>
                         </li>

@@ -9,6 +9,10 @@
     مدیر سامانه
 @endsection
 
+@section('role')
+    پرسنل
+@endsection
+
 @section('messageCount')
     {{4}}
 @endsection
