@@ -43,10 +43,10 @@
 
                                 <div class="col-md-6">
                                     <select id="grade" class="form-control" name="grade" value="{{ old('grade') }}">
-                                        <option name="{{trans('register.lecturer')}}">{{trans('register.lecturer')}}</option>
-                                        <option name="{{trans('register.associate')}}">{{trans('register.associate')}}</option>
-                                        <option name="{{trans('register.teacherAssistant')}}">{{trans('register.teacherAssistant')}}</option>
-                                        <option name="{{trans('register.prof')}}">{{trans('register.prof')}}</option>
+                                        <option value="{{trans('register.lecturer')}}">{{trans('register.lecturer')}}</option>
+                                        <option value="{{trans('register.associate')}}">{{trans('register.associate')}}</option>
+                                        <option value="{{trans('register.teacherAssistant')}}">{{trans('register.teacherAssistant')}}</option>
+                                        <option value="{{trans('register.prof')}}">{{trans('register.prof')}}</option>
                                     </select>
 
                                     @if ($errors->has('grade'))
@@ -61,9 +61,9 @@
                                 <label for="edu" class="col-md-4 control-label">{{trans('register.edu')}}</label>
 
                                 <div class="col-md-6">
-                                    <select id="edu" class="form-control" name="edu" value="{{ old('edu') }}">
-                                        <option name="1">{{trans('register.MSC')}}</option>
-                                        <option name="2">{{trans('register.PHD')}}</option>
+                                    <select id="edu" class="form-control" name="edu" >
+                                        <option value="1">{{trans('register.MSC')}}</option>
+                                        <option value="2">{{trans('register.PHD')}}</option>
                                     </select>
 
                                     @if ($errors->has('edu'))

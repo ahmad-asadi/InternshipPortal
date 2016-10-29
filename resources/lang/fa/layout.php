@@ -18,7 +18,7 @@ return [
     "interests"         =>  "ویرایش علاقه‌مندی‌ها",
     "home"              =>  "خانه",
     "shortTitle"        =>  "CEIT",
-    "appTitle"          =>  "<b>دانشکده مهندسی کامپیوتر</b>",
+    "appTitle"          =>  "<b>پرتال کارآموزی</b>",
     "profile"           =>  "پروفایل",
     "signOut"           =>  "خروج",
     "since"             =>  "سال ورود: ",

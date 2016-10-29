@@ -97,9 +97,9 @@
             <div class="list-group">
                 @foreach($profs as $prof)
                     <a href="#" class="list-group-item list-group-item-action list-group-item-success">
-                        @if($prof->edu == "MSC" || $prof->edu="کارشناسی ارشد")
+                        @if($prof->edu=="1")
                             جناب آقای مهندس
-                        @elseif($prof->edu=="PHD" || $prof->edu="دکترا")
+                        @elseif($prof->edu=="2")
                             جناب آقای دکتر
                         @endif
 
