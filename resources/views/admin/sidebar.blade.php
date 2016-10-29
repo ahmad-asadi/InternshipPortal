@@ -23,7 +23,7 @@
 
             <li><a href="/faculty/register"><i class="fa fa-circle-o text-blue"></i> <span>{{trans('layout.profRegister')}}</span></a></li>
 
-            <li><a href="/company/register"><i class="fa fa-circle-o text-blue"></i> <span>{{trans('layout.compRegister')}}</span></a></li>
+            <li><a href="/companies/register"><i class="fa fa-circle-o text-blue"></i> <span>{{trans('layout.compRegister')}}</span></a></li>
 
             <li><a href="/register"><i class="fa fa-circle-o text-blue"></i> <span>{{trans('layout.studentRegister')}}</span></a></li>
 
