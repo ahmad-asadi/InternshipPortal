@@ -99,7 +99,7 @@
                     <a href="#" class="list-group-item list-group-item-action list-group-item-success">
                         @if($prof->edu == "MSC" || $prof->edu="کارشناسی ارشد")
                             جناب آقای مهندس
-                        @elseif($prof->edu=="PHD")
+                        @elseif($prof->edu=="PHD" || $prof->edu="دکترا")
                             جناب آقای دکتر
                         @endif
 
