@@ -3,11 +3,14 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Ticket extends Model
 {
+    use SoftDeletes;
+
     protected $fillable = [
-        'description', 'capacity'
+        'description', 'capacity', 'approved', 'deleted_at'
     ];
 
     public function company()

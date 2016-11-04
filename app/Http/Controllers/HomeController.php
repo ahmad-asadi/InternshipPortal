@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Admin;
 use App\Company;
 use App\Http\Requests;
 use App\Prof;
@@ -35,6 +36,10 @@ class HomeController extends Controller
             $url = "/faculty/home/" ;
         elseif($role == Company::class)
             $url = "/companies/home" ;
+        elseif($role == Admin::class)
+            $url = "/admin/home" ;
+        else
+            dd($user);
 
         return redirect($url);
     }

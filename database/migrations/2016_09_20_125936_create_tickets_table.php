@@ -17,6 +17,8 @@ class CreateTicketsTable extends Migration
             $table->integer('company_id')->unsigned();
             $table->string('description');
             $table->integer('capacity');
+            $table->integer('approved');
+            $table->softDeletes();
             $table->timestamps();
 
             $table->foreign('company_id')->references('id')->on('companies');

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Admin;
 use App\Company;
 use App\Prof;
 use App\Student;
@@ -166,7 +167,10 @@ class AuthController extends Controller
             $url = "/faculty/home/" ;
         elseif($role == Company::class)
             $url = "/companies/home/" ;
-
+        elseif($role == Admin::class)
+            $url = "/admin/home/" ;
+        else
+            dd($role);
         return redirect($url);
     }
 }

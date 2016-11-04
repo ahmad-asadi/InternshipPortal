@@ -104,4 +104,34 @@ class TicketController extends Controller
 
         return $res;
     }
+
+    public function approveProfTicket(ProfTicket $profTicket)
+    {
+        $profTicket->approved = 1 ;
+        $profTicket->save() ;
+
+        return redirect('/admin/home');
+    }
+
+    public function rejectProfTicket(ProfTicket $profTicket)
+    {
+        $profTicket->delete();
+
+        return redirect('/admin/home');
+    }
+
+    public function approveTicket(Ticket $ticket)
+    {
+        $ticket->approved = 1 ;
+        $ticket->save() ;
+
+        return redirect('/admin/home');
+    }
+
+    public function rejectTicket(Ticket $ticket)
+    {
+        $ticket->delete();
+
+        return redirect('/admin/home');
+    }
 }

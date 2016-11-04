@@ -27,10 +27,10 @@ class StudentController extends Controller
         $profs = Prof::get() ;
 
         /** @noinspection PhpUndefinedMethodInspection */
-        $tickets = Ticket::get() ;
+        $tickets = Ticket::where('approved' , 1)->get() ;
 
         /** @noinspection PhpUndefinedMethodInspection */
-        $profTickets = ProfTicket::get() ;
+        $profTickets = ProfTicket::where('approved' , 1)->get() ;
 
         /** @noinspection PhpUndefinedMethodInspection */
         $reservedTicket = $user->role()->ticket() ;

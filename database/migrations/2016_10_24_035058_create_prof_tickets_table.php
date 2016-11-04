@@ -18,6 +18,8 @@ class CreateProfTicketsTable extends Migration
             $table->integer('prof_id')->unsigned();
             $table->string('description');
             $table->integer('capacity');
+            $table->integer('approved');
+            $table->softDeletes();
             $table->timestamps();
 
             /** @noinspection PhpUndefinedMethodInspection */

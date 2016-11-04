@@ -149,6 +149,11 @@
                     <div class="col-lg-3 col-xs-6">
                         <!-- small box -->
                         <div class="small-box bg-blue">
+                            @if($ticket->approved == 1)
+                                <div class="inner small-box bg-green">
+                                    <h4>تایید شده است</h4>
+                                </div>
+                            @endif
                             <div class="inner">
                                 <p style="font-family: 'B Nazanin'">نام استاد: {{$ticket->prof()->user()->first()->name}} {{$ticket->prof()->user()->first()->family}}</p>
                                 <p style="font-family:'B Nazanin';">{{$ticket->description}}</p>
@@ -162,6 +167,23 @@
                                     {{count($ticket->students()->get())}}
                                     نفر
                                 </p>
+                                <div class="container">
+                                <button  class="alert-danger" style="font-family: 'B Nazanin'; font-size: 15px; border-radius: 30%; margin: 0 -1% 0 1%;">
+                                    <a href={{url("/faculty/rejectTicket/$ticket->id")}} style="color: white" >
+                                        <span style="font-family: 'B Nazanin'; font-size: 18px;">
+حذف تیکت
+                                            </span>
+                                    </a>
+                                </button>
+
+                                 <button  class="alert-success" style="font-family: 'B Nazanin'; font-size: 15px; border-radius: 30%; margin: 0 1% 0 1%;">
+                                    <a href={{url("/faculty/approveTicket/$ticket->id")}} style="color: white" >
+                                        <span style="font-family: 'B Nazanin'; font-size: 18px;">
+تایید تیکت
+                                            </span>
+                                    </a>
+                                </button>
+                                </div>
                             </div>
                             @foreach($ticket->students()->get() as $std)
                                 <div class="icon">
@@ -191,6 +213,11 @@
                     <div class="col-lg-3 col-xs-6">
                         <!-- small box -->
                         <div class="small-box bg-blue">
+                            @if($ticket->approved == 1)
+                                <div class="inner small-box bg-green">
+                                    <h4>تایید شده است</h4>
+                                </div>
+                            @endif
                             <div class="inner">
                                 <h3 style="font-family:'B Nazanin';">
                                     شرکت
@@ -208,6 +235,23 @@
                                     {{$ticket->capacity - count($ticket->students()->get())}}
                         نفر
                                 </p>
+                                <div class="container">
+                                    <button  class="alert-danger" style="font-family: 'B Nazanin'; font-size: 15px; border-radius: 30%; margin: 0 -1% 0 1%;">
+                                        <a href={{url("/companies/rejectTicket/$ticket->id")}} style="color: white" >
+                                        <span style="font-family: 'B Nazanin'; font-size: 18px;">
+حذف تیکت
+                                            </span>
+                                        </a>
+                                    </button>
+
+                                    <button  class="alert-success" style="font-family: 'B Nazanin'; font-size: 15px; border-radius: 30%; margin: 0 1% 0 1%;">
+                                        <a href={{url("/companies/approveTicket/$ticket->id")}} style="color: white" >
+                                        <span style="font-family: 'B Nazanin'; font-size: 18px;">
+تایید تیکت
+                                            </span>
+                                        </a>
+                                    </button>
+                                </div>
                             </div>
                             <div class="icon">
                                 <i class="ion ion-bag"></i>

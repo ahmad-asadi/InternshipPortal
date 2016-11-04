@@ -34,14 +34,19 @@ Route::get('/students/reserveProfTicket/{profTicketId}', 'TicketController@reser
 
 Route::get('/faculty/home', 'ProfController@index');
 Route::get('/faculty/register', 'ProfRegisterController@getRegisterForm');
+Route::get('/faculty/rejectTicket/{profTicketId}', 'TicketController@rejectProfTicket');
+Route::get('/faculty/approveTicket/{profTicketId}', 'TicketController@approveProfTicket');
 
 Route::get('/faculty/registerTicket','TicketController@getProfTicketRegisterForm');
 Route::post('/faculty/registerTicket','TicketController@registerProfTicket');
 
 Route::get('/companies/home', 'CompanyController@index');
 Route::get('/companies/register', 'CompanyRegisterController@getRegisterForm');
+Route::get('/companies/rejectTicket/{ticketId}', 'TicketController@rejectTicket');
+Route::get('/companies/approveTicket/{ticketId}', 'TicketController@approveTicket');
 
 Route::get('/companies/registerTicket','TicketController@getRegisterForm');
 Route::post('/companies/registerTicket','TicketController@registerTicket');
 
 Route::get('/admin/home', 'AdminController@index');
+Route::post('/admin/registerNewUser', 'AdminController@registerNewUser');
